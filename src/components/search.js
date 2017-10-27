@@ -1,5 +1,5 @@
 angular.module('video-player')
 
 .component('search', {
-  // TODO
+  template: '<div ng-include="\'src/templates/search.html\'"></div>'
 });
