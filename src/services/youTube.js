@@ -15,8 +15,7 @@ angular.module('video-player')
     }).then(function successCallback(response) {
       callback(response.data.items);
     }, function errorCallback(response) {
-    // called asynchronously if an error occurs
-    // or server returns response with an error status.
+      console.log('did not complete request', response);
     });
   };
 });

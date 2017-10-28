@@ -2,17 +2,13 @@ angular.module('video-player')
 
 .component('search', {
   bindings: {
-    search: '<',
-    videos: '=',
-    video: '='
+    renderResults: '<',
   },
   controller: function (youTube) {
     this.result = (data) => {
-      this.videos = data;
-      this.video = data[0];
+      this.renderResults(data);
     };
     this.searchYoutube = (params, cb) => {
-      console.log('you called?');
       youTube.search(params, cb);
     };
   },

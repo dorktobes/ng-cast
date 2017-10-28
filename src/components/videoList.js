@@ -5,6 +5,11 @@ angular.module('video-player')
     videos: '<',
     clicked: '<'
   },
+  controller: function () {
+    this.onClick = () =>{
+      
+    };
+  },
   
   template: '<div ng-include="\'src/templates/videoList.html\'"></div>'
 });

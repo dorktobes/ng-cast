@@ -8,9 +8,9 @@ angular.module('video-player')
     this.selectVideo = (video) => {
       this.currentVideo = video;
     };
-    this.searchResults = (params, cb) => {
-      // var debouncedSearch = _.debounce(youTube.search, 500);
-      // debouncedSearch(params, cb);
+    this.searchResults = (data) => {
+      this.videos = data;
+      this.currentVideo = data[0];
     }; 
     this.init = (data) => {
       this.videos = data;
