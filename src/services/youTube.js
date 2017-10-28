@@ -13,7 +13,7 @@ angular.module('video-player')
         videoEmbeddable: true,
       }
     }).then(function successCallback(response) {
-      callback(response.items);
+      callback(response.data.items);
     }, function errorCallback(response) {
     // called asynchronously if an error occurs
     // or server returns response with an error status.
