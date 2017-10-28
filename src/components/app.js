@@ -9,7 +9,8 @@ angular.module('video-player')
       this.currentVideo = video;
     };
     this.searchResults = (params, cb) => {
-      youTube.search(params, cb);
+      var debouncedSearch = _.debounce(youTube.search, 500);
+      debouncedSearch(params, cb);
     }; 
     this.init = (data) => {
       this.videos = data;
