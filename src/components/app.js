@@ -4,14 +4,13 @@ angular.module('video-player')
   bindings: {
 
   },
-  controller: function () {
-    // debugger;
+  controller: function (youTube) {
     this.selectVideo = (video) => {
-      $ctrl.currentVideo = video;
-      console.log('I Clicked');
+      this.currentVideo = video;
     };
-    this.searchResults = () => {
-      
+    this.searchResults = (params, cb) => {
+      // debugger;
+      youTube.search(params, cb);
     };
     this.currentVideo = exampleVideoData[0];
     this.videos = exampleVideoData;
