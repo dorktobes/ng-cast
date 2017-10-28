@@ -1,7 +1,17 @@
 <div class="search-bar form-inline">
-  <input class="form-control" type="text" ng-model="query"
-  ng-change="$ctrl.search({query: query, maxResults: 5, key: YOUTUBE_API_KEY}, $ctrl.result)" />
-  <button class="btn" ng-click="$ctrl.search({query: query, maxResults: 5, key: YOUTUBE_API_KEY}, $ctrl.result)">
+
+  <input 
+    class="form-control" 
+    type="text" 
+    ng-model="query"
+    ng-model-options="{ debounce: 500 }" 
+    ng-change="$ctrl.searchYoutube({query: query,
+    maxResults: 5, key: YOUTUBE_API_KEY}, $ctrl.result)" 
+  />
+  <button 
+    class="btn" 
+    ng-click="$ctrl.searchYoutube({query: query, maxResults: 5, key: YOUTUBE_API_KEY}, $ctrl.result)"
+  >
     <span class="glyphicon glyphicon-search"></span>
   </button>
 </div>

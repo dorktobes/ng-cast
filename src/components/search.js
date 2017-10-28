@@ -6,10 +6,14 @@ angular.module('video-player')
     videos: '=',
     video: '='
   },
-  controller: function () {
+  controller: function (youTube) {
     this.result = (data) => {
       this.videos = data;
       this.video = data[0];
+    };
+    this.searchYoutube = (params, cb) => {
+      console.log('you called?');
+      youTube.search(params, cb);
     };
   },
   template: '<div ng-include="\'src/templates/search.html\'"></div>'
