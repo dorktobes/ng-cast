@@ -7,7 +7,7 @@ angular.module('video-player')
       params: {
         q: params.query,
         maxResults: params.maxResults ? params.maxResults : 5,
-        key: "AIzaSyCIAgkirw1qvLsIondbTYVAPYKzIxZZTdE",
+        key: YOUTUBE_API_KEY,
         part: 'snippet',
         type: 'video',
         videoEmbeddable: true,

@@ -9,11 +9,14 @@ angular.module('video-player')
       this.currentVideo = video;
     };
     this.searchResults = (params, cb) => {
-      // debugger;
       youTube.search(params, cb);
-    };
-    this.currentVideo = exampleVideoData[0];
-    this.videos = exampleVideoData;
+    }; 
+    this.init = (data) => {
+      this.videos = data;
+      this.currentVideo = data[0];
+    },
+    this.videos = this.searchResults({query: 'king charles spaniel'}, this.init);
+    this.currentVideo;
   },
   
   template: '<div  ng-include="\'src/templates/app.html\'" ></div>'

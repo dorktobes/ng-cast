@@ -2,13 +2,15 @@ angular.module('video-player')
 
 .component('search', {
   bindings: {
-    search: '<'
+    search: '<',
+    videos: '=',
+    video: '='
   },
   controller: function () {
     this.result = (data) => {
-      console.log(data);
+      this.videos = data;
+      this.video = data[0];
     };
-    this.test = () => { this.search(); };
   },
   template: '<div ng-include="\'src/templates/search.html\'"></div>'
 });
