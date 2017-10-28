@@ -5,9 +5,6 @@ angular.module('video-player')
     renderResults: '<',
   },
   controller: function (youTube) {
-    this.result = (data) => {
-      this.renderResults(data);
-    };
     this.searchYoutube = (params, cb) => {
       youTube.search(params, cb);
     };
